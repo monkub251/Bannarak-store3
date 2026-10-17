@@ -1,1 +1,19 @@
-
+name: Build EXE (Nuitka)
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements_nuitka.txt
+      - name: Build onefile
+        shell: cmd
+        run: python -m nuitka --onefile --enable-plugin=pyside6 --include-qt-plugins=sensible,imageformats --windows-console-mode=disable --windows-uac-admin --windows-icon-from-ico=assets\icon.ico --include-data-dir=assets=assets --include-data-dir=pack=pack --include-data-dir=cache=cache --include-data-dir=gifs=gifs --nofollow-import-to=tkinter --nofollow-import-to=PySide6.QtWebEngineCore --company-name=BANNARAKX --product-name="FiveM FPS Optimizer" --file-description="FiveM FPS Optimizer" --file-version=1.0.0.0 --product-version=1.0.0.0 --assume-yes-for-downloads --output-dir=dist_nuitka --output-filename=FiveM_FPS_Optimizer.exe main.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FiveM_FPS_Optimizer_Nuitka
+          path: dist_nuitka/FiveM_FPS_Optimizer.exe
