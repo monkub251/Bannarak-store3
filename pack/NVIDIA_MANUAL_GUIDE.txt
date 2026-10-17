@@ -1,0 +1,29 @@
+﻿BANNARAKX ULTIMATE - NVIDIA MANUAL GUIDE
+========================================
+สคริปต์สั่งปุ่มในโปรแกรม NVIDIA ไม่ได้ (ค่าพวกนี้อยู่ในฐานข้อมูลไดรเวอร์)
+ทำตามนี้ครั้งเดียว:
+
+[ A ] NVIDIA Control Panel (คลิกขวา Desktop > NVIDIA Control Panel)
+  1) Manage 3D settings > Global Settings
+     - OpenGL rendering GPU ........ เลือกการ์ดจอ NVIDIA ของคุณ
+       (i5-12400F ไม่มี iGPU จึงมีการ์ดเดียว ปกติเป็น Auto อยู่แล้ว)
+     - Power management mode ....... Prefer maximum performance
+     - Low Latency Mode ............ On  (หรือ Ultra ถ้าเกมไม่รองรับ Reflex)
+     - Texture filtering - Quality . High performance
+     - Vertical sync ............... Off
+  2) Adjust image settings with preview  (หน้า Home ใน NVIDIA App = Graphics > Global)
+     - เลือก "Use my preference emphasizing" แล้วเลื่อนแถบ Performance ไปซ้ายสุด
+  3) Adjust desktop color settings
+     - Digital vibrance ............ 60-70% ให้ภาพคมสี่ชัด (ปรับตามชอบ)
+  4) Change resolution  ->  ตั้ง Refresh rate สูงสุดของจอ
+
+[ B ] ภาพคมขึ้น / เล็งง่ายขึ้น (ทำในเกม ไม่ใช่ registry)
+  - Image Sharpening (NVIDIA App > Graphics > Image Scaling / Sharpen) 30-50%
+  - ในเกมปิด Motion Blur, Depth of Field, Film Grain
+  - ใช้ Raw Input ถ้าเกมมีตัวเลือก และตั้ง Sensitivity ที่เกม ไม่ใช่ที่ Windows
+  - เมาส์: ตั้ง DPI 800-1600 + Polling rate สูงสุดในโปรแกรมของเมาส์
+
+[ C ] Valorant / FiveM
+  - สคริปต์ไม่ได้เพิ่ม FiveM หรือ Valorant ลงรายการ Graphics performance preference
+  - ถ้ามี GPU หลายตัว (เช่นโน้ตบุ๊ก) ให้ไปที่ Settings > System > Display > Graphics
+    แล้วเพิ่มเกมด้วยตัวเอง เลือก High performance

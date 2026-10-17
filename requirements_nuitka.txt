@@ -1,0 +1,5 @@
+PySide6-Essentials>=6.6
+numpy>=1.24
+nuitka>=2.4
+ordered-set
+zstandard
